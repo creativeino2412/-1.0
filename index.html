@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
   <head>
     <meta charset="utf-8">
@@ -8,4 +9,52 @@
     <h1>こんにちは！よしのホームページへようこそ</h1>
     <p>これは GitHub Pages のテストページです。</p>
   </body>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>よしのホームページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    header { background: #333; color: #fff; padding: 1em; }
+    header nav a { color: #fff; margin-right: 1em; text-decoration: none; }
+    main { padding: 2em; max-width: 800px; margin: auto; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    footer { text-align: center; padding: 1em; background: #333; color: #fff; margin-top: 2em; }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="index.html">ホーム（公開掲示板）</a>
+    <a href="myboard.html">自分用掲示板</a>
+    <a href="tools.html">ツール紹介</a>
+    <a href="software.html">ソフト紹介</a>
+  </nav>
+</header>
+
+<main>
+  <h1>よしの掲示板</h1>
+  <p>ここは公開掲示板です。他の人も書き込み可能です。</p>
+
+  <!-- Utterances埋め込み -->
+  <div id="utterances-container"></div>
+  <script src="https://utteranc.es/client.js"
+          repo="ユーザー名/リポジトリ名"
+          issue-term="pathname"
+          label="掲示板"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+</main>
+
+<footer>
+  &copy; 2025 よし
+</footer>
+
+</body>
+
 </html>

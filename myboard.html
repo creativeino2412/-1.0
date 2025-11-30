@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>よしの自分用掲示板</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    main { padding: 2em; max-width: 600px; margin: auto; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    textarea { width: 100%; height: 100px; }
+    button { margin-top: 0.5em; padding: 0.5em 1em; }
+    ul { list-style: none; padding: 0; }
+    li { background: #eee; margin: 0.5em 0; padding: 0.5em; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>よしの自分用掲示板</h1>
+  <textarea id="message" placeholder="メッセージを入力"></textarea><br>
+  <button onclick="postMessage()">書き込む</button>
+  <ul id="board"></ul>
+</main>
+
+<script>
+  // 既存メッセージを localStorage から読み込む
+  const board = document.getElementById('board');
+  let messages = JSON.parse(localStorage.getItem('myboard')) || [];
+  messages.forEach(msg => addMessage(msg));
+
+  function addMessage(msg){
+    const li = document.createElement('li');
+    li.textContent = msg;
+    board.appendChild(li);
+  }
+
+  function postMessage(){
+    const msg = document.getElementById('message').value.trim();
+    if(msg === "") return;
+    messages.push(msg);
+    localStorage.setItem('myboard', JSON.stringify(messages));
+    addMessage(msg);
+    document.getElementById('message').value = "";
+  }
+</script>
+</body>
+</html>
