@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>よし のHP</title>
-  </head>
-  <body>
-    <h1>こんにちは！よしのホームページへようこそ</h1>
-    <p>これは GitHub Pages のテストページです。</p>
-  </body>
-
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>よしのホームページ</title>
+  <title>開発研究所</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
-    header { background: #333; color: #fff; padding: 1em; }
-    header nav a { color: #fff; margin-right: 1em; text-decoration: none; }
-    main { padding: 2em; max-width: 800px; margin: auto; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    header { background: #333; color: #fff; padding: 1em; text-align: center; }
+    header nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+    main { padding: 2em; max-width: 800px; margin: auto; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); text-align: center; }
     footer { text-align: center; padding: 1em; background: #333; color: #fff; margin-top: 2em; }
+    .comments { margin-top: 1em; text-align: left; }
   </style>
 </head>
 <body>
 
 <header>
+  <h1>開発研究所</h1>
   <nav>
     <a href="index.html">ホーム（公開掲示板）</a>
     <a href="myboard.html">自分用掲示板</a>
@@ -35,10 +26,14 @@
 </header>
 
 <main>
-  <h1>よしの掲示板</h1>
-  <p>ここは公開掲示板です。他の人も書き込み可能です。</p>
+  <div class="comments">
+    <p>初心者用ツール・アプリ開発基礎掲示板</p>
+    <p>誰でも参加自由、質問に解る人が回答する</p>
+    <p>誹謗中傷・暴言・脅迫等、確認次第削除します</p>
+    <p>管理人：Creative Ino.</p>
+  </div>
 
-  <!-- Utterances埋め込み -->
+  <!-- 公開掲示板 Utterances -->
   <div id="utterances-container"></div>
   <script src="https://utteranc.es/client.js"
           repo="ユーザー名/リポジトリ名"
@@ -48,13 +43,11 @@
           crossorigin="anonymous"
           async>
   </script>
-
 </main>
 
 <footer>
-  &copy; 2025 よし
+  &copy; 2025 Creative Ino.
 </footer>
 
 </body>
-
 </html>
